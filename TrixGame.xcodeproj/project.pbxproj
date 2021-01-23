@@ -21,6 +21,8 @@
 		58EBBDFF25BAFCCB003C3BDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58EBBDFE25BAFCCB003C3BDC /* Preview Assets.xcassets */; };
 		58EBBE0A25BAFCCB003C3BDC /* TrixGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EBBE0925BAFCCB003C3BDC /* TrixGameTests.swift */; };
 		58EBBE1525BAFCCB003C3BDC /* TrixGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EBBE1425BAFCCB003C3BDC /* TrixGameUITests.swift */; };
+		58F6D8DB25BC1E8100AFB864 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6D8DA25BC1E8100AFB864 /* CardView.swift */; };
+		58F6D8E025BC1EC800AFB864 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6D8DF25BC1EC800AFB864 /* AnyShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		58EBBE1025BAFCCB003C3BDC /* TrixGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrixGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58EBBE1425BAFCCB003C3BDC /* TrixGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrixGameUITests.swift; sourceTree = "<group>"; };
 		58EBBE1625BAFCCB003C3BDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58F6D8DA25BC1E8100AFB864 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = TrixGame/CardView.swift; sourceTree = SOURCE_ROOT; };
+		58F6D8DF25BC1EC800AFB864 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 		58B04D6C25BB2872006C5C42 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				58F6D8DA25BC1E8100AFB864 /* CardView.swift */,
+				58F6D8DF25BC1EC800AFB864 /* AnyShape.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 				58B04D7C25BB32C2006C5C42 /* Array+Identifiable.swift in Sources */,
 				58B04D6725BB2616006C5C42 /* Card.swift in Sources */,
 				58B04D8D25BB6A11006C5C42 /* Diamond.swift in Sources */,
+				58F6D8DB25BC1E8100AFB864 /* CardView.swift in Sources */,
+				58F6D8E025BC1EC800AFB864 /* AnyShape.swift in Sources */,
 				58B04D7D25BB32C2006C5C42 /* Array+Only.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
