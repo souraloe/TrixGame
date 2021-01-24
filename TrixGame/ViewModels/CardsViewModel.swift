@@ -20,8 +20,14 @@ class CardsViewModel: ObservableObject {
         self.model = CardsViewModel.createCardsModel()
     }
     
+    func dealMoreCards() {
+        for _ in 0...2 {
+            model.showNewCard()
+        }
+    }
+    
     static private func createCardsModel() -> CardsModel {
-        return CardsModel {
+        return CardsModel (cardsCountToShow: visibleCardsCount) {
             var cards: [Card] = []
             var currentId = 0
             let defaultColors = [Color(red:204/255, green:73/255, blue:71/255),
@@ -35,7 +41,7 @@ class CardsViewModel: ObservableObject {
                                 id: currentId,
                                 color: color,
                                 shape: shape,
-                                count: shapesCount,
+                                shapesCount: shapesCount,
                                 filling: filling
                             ))
                             currentId += 1
@@ -44,20 +50,24 @@ class CardsViewModel: ObservableObject {
                 }
             }
             cards.shuffle()
-            return Array(cards[0..<visibleCardsCount])
+            return cards
         }
     }
     
     // MARK: - Access to the Model
     
     var cards: [Card] {
-        model.cards
+        model.showedCards
+    }
+    
+    var scores: Int {
+        model.scores
     }
     
     //MARK: - Intent(s)
     
     func choose(card: Card) {
         objectWillChange.send()
-        model.choose(card: card)
+        model.select(card: card)
     }
 }

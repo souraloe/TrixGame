@@ -12,9 +12,10 @@ struct Card: Identifiable {
     var id: Int
     var color: Color
     var shape: Shape
-    var count: Int
+    var shapesCount: Int
     var filling: Filling
-    var chosed: Bool = false
+    var isSelected: Bool = false
+    var state = State.none
     
     enum Shape: CaseIterable {
         case ellipse
@@ -26,5 +27,11 @@ struct Card: Identifiable {
         case stroke
         case transparent
         case filled
+    }
+    
+    enum State {
+        case none
+        case matched
+        case mismatched
     }
 }

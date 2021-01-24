@@ -11,13 +11,14 @@ struct CardView: View {
     var card: Card
     
     var body: some View {
-        ZStack {
-            Group {
-                RoundedRectangle(cornerRadius: cardCornerRadius)
-                    .strokeBorder(card.chosed ? Color.blue : Color.black, lineWidth: cardStrokeWidth)
-                    .background(Color.white)
-                GeometryReader { geometry in
+        GeometryReader { geometry in
+            ZStack {
+                Group {
+                    RoundedRectangle(cornerRadius: cardCornerRadius)
+                        .strokeBorder(card.isSelected ? Color.blue : Color.black, lineWidth: card.isSelected ? cardStrokeWidth*1.5 : cardStrokeWidth)
+                        .background(Color.white)
                     body(for: geometry.size)
+                        .transition(.scale)
                 }
             }
         }
@@ -25,19 +26,17 @@ struct CardView: View {
     
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
-        GeometryReader { geometry in
-            VStack (alignment: .center) {
-                Spacer()
-                ForEach(0..<card.count) { index in
-                    makeShape().padding(shapesPadding).frame(
-                        minWidth: 0,
-                        maxWidth: geometry.size.width,
-                        minHeight: 0,
-                        maxHeight: geometry.size.height*0.3,
-                        alignment: .center)
-                }
-                Spacer()
+        VStack (alignment: .center) {
+            Spacer()
+            ForEach(0..<card.shapesCount) { index in
+                makeShape().padding(shapesPadding).frame(
+                    minWidth: 0,
+                    maxWidth: size.width,
+                    minHeight: 0,
+                    maxHeight: size.height*0.3,
+                    alignment: .center)
             }
+            Spacer()
         }
         .padding(cardPadding)
     }
